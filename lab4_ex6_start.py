@@ -2,28 +2,52 @@ import random # needed for heal function, see lab text
 
 ### Function Definitions ###
 def attack_is_valid(attack):
-    #your code here
-    return False
+    if attack > 0:
+        return True
+    else:
+        return False
 
 
 def defense_is_valid(attack, defense):
-    #your code here
-    return False
+    if defense > 0 and defense <= attack:
+        return True
+    else:
+        return False
 
 
 def calc_damage(attack, defense, is_critical):
-    #your code here
-    return -1
+    damage = attack - defense
+    if attack >= 1:
+        if damage >0:
+            if is_critical == False:
+                return damage
+            else:
+                crit_damage = damage * 2
+                return crit_damage
+        else:
+            return 1
+    else:
+        return 0
+            
+    
+    
 
 
 def calc_hitpoints(damage, current_hitpoints):
-    #your code here
-    return ""
+    hitpoints = current_hitpoints - damage
+    if hitpoints > 0:
+        return "Target has " + str(hitpoints) + " hitpoints left"
+    else:
+        return "Target has fainted"
 
 
 def heal(current_hitpoints, max_hitpoints):
-    #your code here
-    return -1
+    lost_hitpoints = max_hitpoints - current_hitpoints
+    if lost_hitpoints == 0:
+        return lost_hitpoints
+    else:
+        healed_hitpoints = random.randint(1, lost_hitpoints)
+        return healed_hitpoints
 
 
 ### main program ###
@@ -128,3 +152,4 @@ def test():
     
 if __name__ == "__main__":    
     test()
+ 
