@@ -26,14 +26,8 @@ separator = "_"
 pretty_printer(matrix, separator)
 print ("\n")
 
-#ex4
-# we need to count always from "start" (1) to "to" (chosen number)
-# "start" is multiplied by n
-# n += 1 every loop. n max is 10
-# start += 1
-# inner loop  --> start*n
-# outer loop --> start+=1
 
+#ex4
 def print_multiples(to):
     start = 1
     n = 1
@@ -50,6 +44,86 @@ print_multiples(12)
 
 
 
+#ex6
+my_list = [[1, 2, 3, 4, 5],
+           [10, 20, 30, 40, 50],
+           [11, 22, 33, 44, 55],
+           [12, 34, 56, 78, 90]]
+print (my_list)
+print ("\n")
+
+def show(my_list):
+    print()
+    for i in range (0, len(my_list)):
+        print (my_list[i])
+
+#6_1
+def vertical_mirror(my_list):
+    for i in range (0, int (len(my_list)/2)):
+        my_list[i], my_list[len(my_list)-1-i] = my_list[len(my_list)-1-i], my_list[i]
+        
+    print ("vertical")
+    return my_list
+        
+show(vertical_mirror(my_list))
+
+
+#6_2
+my_list = [[1, 2, 3, 4, 5],
+           [10, 20, 30, 40, 50],
+           [11, 22, 33, 44, 55],
+           [12, 34, 56, 78, 90]]
+
+def horizontal_mirror(my_list):
+    for i in range (0, len(my_list)):
+        var = int (len(my_list[i])/2)
+        for j in range (0, var):
+            my_list[i][j], my_list[i][len(my_list[i])-1-j] = my_list[i][len(my_list[i])-1-j], my_list[i][j]
+    print ("horizontal")        
+    return my_list
+show(horizontal_mirror(my_list))
+    
+    
+#6_3
+def starry(my_list):
+    for i in range( 0, len(my_list) ):
+        for col_index in range( 0, len( my_list[ i ] ) ):
+            if my_list[ i ][ col_index ] != " ":
+                my_list[ i ][ col_index ] = '*'
+    return my_list
+show(starry(my_list))
+
+#6_4
+my_list = [[1, 2, 3, 4, 5],
+           [10, 20, 30, 40, 50],
+           [11, 22, 33, 44, 55],
+           [12, 34, 56, 78, 90]]
+def left(my_list,units):
+    for i in range (0, len(my_list)):
+        for j in range (0, len(my_list[i])):
+            if j+units > len(my_list[i])-1:
+                my_list[i][j] = " "
+            else:
+                my_list[i][j] = my_list[i][j+units]
+            
+    return my_list
+show(left(my_list, 4))
+
+#6_5
+my_list = [[1, 2, 3, 4, 5],
+           [10, 20, 30, 40, 50],
+           [11, 22, 33, 44, 55],
+           [12, 34, 56, 78, 90]]
+def right(my_list,units):
+    for i in range (0, len(my_list)):
+        for j in range (len(my_list[i])-1, -1, -1):
+            if j-units < 0:
+                my_list[i][j] = " "
+            else:
+                my_list[i][j] = my_list[i][j-units]
+            print (j)
+    return my_list
+show(right(my_list, 1))
 
 
 
