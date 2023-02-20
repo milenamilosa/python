@@ -33,11 +33,3 @@ for row in matrix:
         print(el, end ="\t") # \t means "tab"
     print()
 
-# Python Tuple
-# Python Tuple is a collection of objects separated by commas.
-# In some ways, a tuple is similar to a list in terms of indexing, nested objects, and repetition
-# but a tuple is immutable, unlike lists which are mutable
-
-# Метод grid() позволяет поместить виджет в определенную ячейку условной сетки или грида.
-# Метод grid применяет следующие параметры: column: номер столбца, отсчет начинается с нуля row: номер строки, отсчет начинается с нуля
-# Grid - сетка, таблица - один из трех управляющих размещением, или менеджеров геометрии
