@@ -1,3 +1,11 @@
+# TASK. given line by line names and 4 exams' marks: Maths, Chemistry, Physics, Biology. "x" = absence from the exam.
+# The function builds and returns a list of strings, where the string is the name of a student,
+# followed by the course for which they obtained the highest score. A number of elements to account for are:
+#     In case of a “draw”, the courses are separated by a “/”;
+#     Mind that the “/” is not needed after the last best course of this student;
+#     Mind spaces, colons, etc., the function should build the required string exactly (see test code for details);
+#     If a student was absent for all courses, the string <absent for all courses> is added rather than a “best course”.
+
 # having this text document:
 
 # Jayce Mcdowell
